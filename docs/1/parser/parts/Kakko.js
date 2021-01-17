@@ -10,4 +10,12 @@ class Kakko {
         });
         return text
     }
+    // 青空文庫形式。　漢字(かんじ) → ｜漢字《かんじ》
+    static toAozora(text, is_Zenkaku=false) {
+        const regex = (is_Zenkaku) ? Kakko.#REGEX_KANJI_RUBY : Kakko.#REGEX_KANJI_RUBY_H
+        text = text.replace(regex, (match, p1, p2)=>{
+            return `｜${p1}《${p2}》`;
+        });
+        return text
+    }
 }
