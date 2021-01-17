@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>小説の中間テキスト形式をHTMLに変換する。</title>
+    <script src="./jquery-3.5.1.min.js"></script>
+    <script src="./parser/Kakuyomu.js"></script>
+    <script src="./parser/Narou.js"></script>
+    <script src="./main.js"></script>
+</head>
+<body>
+<h1>小説の中間テキスト形式をHTMLに変換する。</h1>
+<ul><li>JS.Novel.Parser.20210117183645</li></ul>
+<select id="selector">
+    <option value="Kakuyomu">カクヨム</option>
+    <option value="Narou">小説家になろう</option>
+</select>
+<div style="display:flex;">
+    <textarea id="editor" cols="40" rows="20">あ｜漢字《かんじ》あ
+あ漢字《かんじ》あ
+あ《《傍点》》あ
+あ漢字（かんじ）あ
+あ漢字(かんじ)あ
+</textarea>
+    <textarea id="viewer" cols="40" rows="20" disabled></textarea>
+</div>
+</body>
+</html>
