@@ -65,5 +65,7 @@ html -> md -> denden|ブラウザ閲覧内容をマークダウンにする
 * `md` <-> `denden` <-> `html`
 * `md` <-> `denden` <-> `epub`
 * `html` <-> `epub`
+* `html` <-> `denden` <-> `md`
 * `epub` <-> `html`
+* `epub` <-> `denden` <-> `md`
 
