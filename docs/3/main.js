@@ -11,11 +11,7 @@ window.addEventListener('load', (event) => {
         const viewer = document.querySelector('#viewer');
         viewer.value = getParser().parse(editor.value);
     }
-    $('#selector').trigger('change');
-    console.log(Ruby.toHtml('漢字', 'かんじ'));
-    console.log(Ruby.toHtml(['漢','字'], ['かん','じ']));
-
-    console.log(Ruby.toDom('漢字', 'かんじ'));
-    console.log(Ruby.toDom(['漢','字'], ['かん','じ']));
-
+    document.querySelector('#selector').focus();
+    document.querySelector('#selector').options[0].selected = true;
+    parse();
 });
