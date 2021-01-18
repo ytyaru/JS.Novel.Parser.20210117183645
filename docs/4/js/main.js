@@ -11,7 +11,7 @@ window.addEventListener('load', (event) => {
         const viewer = document.querySelector('#viewer');
         const drawer = document.querySelector('#drawer');
         viewer.value = getParser().parse(editor.value);
-        drawer.innerHTML = Paragraph.parse(viewer.value);
+        drawer.innerHTML = BreakLine.parse(Paragraph.parse(viewer.value));
     }
     document.querySelector('#selector').focus();
     document.querySelector('#selector').options[0].selected = true;

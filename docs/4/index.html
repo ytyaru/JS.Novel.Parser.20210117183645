@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>小説の中間テキスト形式をHTMLに変換する。</title>
     <script src="./js/dom/Ruby.js"></script>
+    <script src="./js/parser/parts/BreakLine.js"></script>
     <script src="./js/parser/parts/Paragraph.js"></script>
     <script src="./js/parser/parts/KakkoAozora.js"></script>
     <script src="./js/parser/parts/Kakko.js"></script>
@@ -24,15 +25,25 @@
     <textarea id="editor" cols="40" rows="20">あ｜漢字《かんじ》あ
 あ|漢字《かんじ》あ|半角《はんかく》
 あ漢字《かんじ》あ
+
 あ《《傍点》》あ
 
-あ漢字（かんじ）あ全角（ぜんかく）
-あ漢字(かんじ)あ半角（はんかく）
+あ漢字（かんじ）あ
+あ漢字(かんじ)あ半角(はんかく)
 
 あ｜《そのまま》あ
+あ|《そのまま》あ
+あ|(そのまま)あ
+あ|（そのまま）あ
+あ｜(そのまま)あ
+あ｜（そのまま）あ
 
 　パラグラフ。行頭に全角スペースが１字あり、なおかつ末尾に２つの改行があれば、パラグラフになる。
 
+「発言」
+（内心）
+「発言（内心）」
+（内心「発言」）
 </textarea>
     <textarea id="viewer" cols="40" rows="20" disabled></textarea>
     <div id="drawer"></div>
