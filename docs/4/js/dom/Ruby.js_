@@ -1,0 +1,13 @@
+class Ruby {
+    static toText(ruby_txt, rt_txt) {
+        return `<ruby>${ruby_txt}<rt>${rt_txt}</rt></ruby>`;
+    }
+    static toDom(ruby_txt, rt_txt) {
+        const ruby = document.createElement("ruby");
+        ruby.textContent = ruby_txt; //"漢字"
+        const rt = document.createElement("rt");
+        rt.textContent = rt_txt; //"かんじ"
+        ruby.appendChild(rt);
+        return ruby;
+    }
+}

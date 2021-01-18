@@ -1,0 +1,23 @@
+class Paragraph {
+    // 末尾に改行が２つあれば<p>
+//    static #REGEX_PARAGRAPH = /([^\n]+)[\n]{2}/g;
+//    static #REGEX_PARAGRAPH = /^(.+)[\n]{2}/gm;
+//    static #REGEX_PARAGRAPH = /^([\s\S.]+)[\n]{2}/gm;
+//    static #REGEX_PARAGRAPH = /^([.]+[\s\S]?)[\n]{2}/gm;
+//    static #REGEX_PARAGRAPH = /^([.]+[\s\S])[\n]{2}/gm;
+//    static #REGEX_PARAGRAPH = /^(.+)[\n]{2}/gms;
+//    static #REGEX_PARAGRAPH = /^(.+[\n])[\n]{2}/gm;
+    static #REGEX_PARAGRAPH = /^(.+[\n]?)[\n]{2}/gm;
+//    static #REGEX_PARAGRAPH = /^(.+[\n]?[.+]?)[\n]{2}/gm;
+
+    // 行頭...改行２つ
+    // 改行２つ...行末
+    static parse(text) {
+        text = text.replace(Paragraph.#REGEX_PARAGRAPH, (match, p1)=>{
+            return `<p>${p1}</p>`;
+        });
+        // パラグラフ以外の改行は<br>に
+        text = text.replace('\n', '<br>');
+        return text
+    }
+}
