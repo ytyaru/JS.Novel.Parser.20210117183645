@@ -14,3 +14,9 @@ rt {
 #drawer {
     font-size: 1em;
 }
+/* カクヨムの傍点 */
+/* https://developer.mozilla.org/ja/docs/Web/CSS/text-emphasis */
+#drawer em {
+    text-emphasis: filled dot black; 
+    -webkit-text-emphasis: filled dot black;
+}
