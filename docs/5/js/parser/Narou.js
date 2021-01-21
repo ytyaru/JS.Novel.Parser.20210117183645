@@ -13,6 +13,11 @@ class Narou {
         text = text.replace(Narou.#REGEX_KANJI_RUBY, (match, p1, p2)=>{
             return `<ruby>${p1}<rt>${p2}</rt></ruby>`;
         });
+        // escape
+        text = text.replace('｜(', '(');
+        text = text.replace('|(', '(');
+        text = text.replace('｜（', '（');
+        text = text.replace('|（', '（');
         return text
     }
 }
