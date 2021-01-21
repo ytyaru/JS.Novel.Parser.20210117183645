@@ -6,14 +6,7 @@ class Common {
         this.#rubyRuleBuilder = new CommonRubyRuleBuilder();
     }
     parse(text) {
-        text = this.#parseRuby(text);
-        return text;
-    }
-    #parseRuby(text) {
-        for (let rule of this.#rubyRuleBuilder.Rules) {
-            let parser = new RubyParser(rule);
-            text = parser.parse(text);
-        }
+        text = RubyParser.parse(text, this.#rubyRuleBuilder);
         return text;
     }
 }

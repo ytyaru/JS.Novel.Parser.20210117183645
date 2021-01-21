@@ -5,15 +5,8 @@ class Kakuyomu {
         this.#rubyRuleBuilder = new KakuyomuRubyRuleBuilder(isKakko);
     }
     parse(text) {
-        text = this.#parseRuby(text);
+        text = RubyParser.parse(text, this.#rubyRuleBuilder);
         text = this.#parseDot(text);
-        return text;
-    }
-    #parseRuby(text) {
-        for (let rule of this.#rubyRuleBuilder.Rules) {
-            let parser = new RubyParser(rule);
-            text = parser.parse(text);
-        }
         return text;
     }
     #parseDot(text) {
