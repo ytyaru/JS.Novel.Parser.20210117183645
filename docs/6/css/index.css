@@ -17,6 +17,8 @@ rt {
 /* カクヨムの傍点 */
 /* https://developer.mozilla.org/ja/docs/Web/CSS/text-emphasis */
 #drawer em {
-    text-emphasis: filled dot black; 
+/*    text-emphasis: filled dot black; */
+    text-emphasis-style: filled dot; 
+    text-emphasis-color: inherit;
     -webkit-text-emphasis: filled dot black;
 }
