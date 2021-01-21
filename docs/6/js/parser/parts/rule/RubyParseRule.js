@@ -1,9 +1,10 @@
 class RubyParseRule { // ｜ｅｔｃ《エトセトラ》　漢字《かんじ》　漢字（かんじ）　漢字(かんじ)　｜《エスケープ》　｜（エスケープ）
-    #startChar = '[｜|]';
+    #startChar = '｜|';
     #encloseStart = '《';
     #encloseEnd = '》';
     #rbLen = 10;
     #rtLen = 20;
+    #canStartChar = true; // ｜漢字《かんじ》
     #canEscape = true; // ｜《二重山括弧をそのまま表示する》
     #canOmitStartChar = true; // 漢字《かんじ》　書式が有効である。｜漢字《かんじ》のような縦線を省く
 
@@ -13,9 +14,9 @@ class RubyParseRule { // ｜ｅｔｃ《エトセトラ》　漢字《かんじ�
 
     }
     get StartChar() { return this.#startChar; }
-    setStartCharH() { this.#startChar = '[|]'; }
-    setStartCharZ() { this.#startChar = '[｜]'; }
-    setStartCharAll() { this.#startChar = '[|｜]'; }
+    setStartCharH() { this.#startChar = '|'; }
+    setStartCharZ() { this.#startChar = '｜'; }
+    setStartCharAll() { this.#startChar = '|｜'; }
 
     get EncloseStartChar() { return this.#encloseStart; }
     get EncloseEndChar() { return this.#encloseEnd; }
@@ -24,18 +25,24 @@ class RubyParseRule { // ｜ｅｔｃ《エトセトラ》　漢字《かんじ�
         this.#encloseEnd = '》';
     }
     setEncloseCharParentheses() {
-        this.#encloseStart = '（';
-        this.#encloseEnd = '）';
+        this.#encloseStart = '(（';
+        this.#encloseEnd = ')）';
     }
     setEncloseCharParenthesesH() {
         this.#encloseStart = '(';
         this.#encloseEnd = ')';
+    }
+    setEncloseCharParenthesesZ() {
+        this.#encloseStart = '（';
+        this.#encloseEnd = '）';
     }
     get RbLen() { return this.#rbLen; }
     set RbLen(value) { if (0 < value) { this.#rbLen = value; } }
     get RtLen() { return this.#rtLen; }
     set RtLen(value) { if (0 < value) { this.#rtLen = value; } }
 
+    get CanStartChar() { return this.#canStartChar; }
+    set CanStartChar(value) { this.#canStartChar = value; }
     get CanEscape() { return this.#canEscape; }
     set CanEscape(value) { this.#canEscape = value; }
     get CanOmitStartChar() { return this.#canOmitStartChar; }
