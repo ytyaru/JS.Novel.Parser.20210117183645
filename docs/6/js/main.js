@@ -26,8 +26,9 @@ window.addEventListener('load', (event) => {
         const ruleBuilder = new ruleBuilderType();
         console.log(ruleBuilder instanceof ruleBuilderType);
         console.log(ruleBuilder);
-        console.log(ruleBuilder.Rules);
+        console.log('ruleBuilder.Rules',ruleBuilder.Rules);
         for (let rule of ruleBuilder.Rules) {
+            console.log('rule',rule);
             let parser = new RubyParser(rule);
             text = parser.parse(text);
         }
