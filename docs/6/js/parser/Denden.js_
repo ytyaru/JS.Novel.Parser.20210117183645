@@ -1,7 +1,8 @@
 class Denden { // でんでんマークダウン。{漢字|かんじ}, {漢字|かん|じ}
-    #REGEX_RUBY = /[\{]([^\{\}]+)[\}]/g; // {...}
-    parse(text) {
-        text = text.replace(this.#REGEX_RUBY, (match, p1)=>{
+    static #REGEX_RUBY = /[\{]([^\{\}]+)[\}]/g; // {...}
+    static #REGEX_RB_RT = /([^\|]+)[\|]]/g; // ...|...
+    static parse(text) {
+        text = text.replace(Denden.#REGEX_RUBY, (match, p1)=>{
             const texts = p1.split('|');
             console.log(texts, texts[0].length === texts.length);
             if (texts.length === 2) {

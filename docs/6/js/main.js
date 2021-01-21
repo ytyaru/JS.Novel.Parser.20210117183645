@@ -6,7 +6,8 @@ window.addEventListener('load', (event) => {
         parse();
     });
 //    function getRuleBuilderType() { return eval(document.querySelector('#selector').value); }
-    function getParser() { return eval(document.querySelector('#selector').value); }
+//    function getParser() { return eval(document.querySelector('#selector').value); }
+    function getParserType() { return eval(document.querySelector('#selector').value); }
 
 //    function getClass(className){return Function('return (' + className + ')')();}
     function getRuleBuilderType(){return Function('return (' + document.querySelector('#selector').value + ')')();}
@@ -16,8 +17,13 @@ window.addEventListener('load', (event) => {
         const viewer = document.querySelector('#viewer');
         const drawer = document.querySelector('#drawer');
 //        viewer.value = getParser().parse(editor.value);
-//        drawer.innerHTML = BreakLine.parse(Paragraph.parse(viewer.value));
+        const parserType = getParserType();
+        const parser = new parserType();
+        console.log(parserType , parser );
+        viewer.value = parser.parse(editor.value);
+        drawer.innerHTML = BreakLine.parse(Paragraph.parse(viewer.value));
 
+        /*
 //        KakuyomuRubyRuleBuilder
 //        NarouRubyRuleBuilder 
 //        PlainToAozoraRubyRuleBuilder
@@ -34,6 +40,7 @@ window.addEventListener('load', (event) => {
         }
         viewer.value = text;
         drawer.innerHTML = BreakLine.parse(Paragraph.parse(viewer.value));
+        */
     }
     document.querySelector('#selector').focus();
     document.querySelector('#selector').options[0].selected = true;

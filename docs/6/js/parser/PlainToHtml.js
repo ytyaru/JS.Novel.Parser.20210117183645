@@ -1,7 +1,7 @@
-class Narou {
+class PlainToHtml { // 漢字（かんじ）-> <ruby>漢字<rt>かんじ</rt></ruby>
     #rubyRuleBuilder;
     constructor() {
-        this.#rubyRuleBuilder = new NarouRubyRuleBuilder();
+        this.#rubyRuleBuilder = new PlainToHtmlRubyRuleBuilder();
     }
     parse(text) {
         text = this.#parseRuby(text);

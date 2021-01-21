@@ -13,8 +13,12 @@
     <script src="./js/parser/parts/parser/RubyParser.js"></script>
     <script src="./js/parser/parts/BreakLine.js"></script>
     <script src="./js/parser/parts/Paragraph.js"></script>
+    <!--
     <script src="./js/parser/parts/KakkoAozora.js"></script>
     <script src="./js/parser/parts/Kakko.js"></script>
+    -->
+    <script src="./js/parser/parts/PlainToAozora.js"></script>
+    <script src="./js/parser/parts/PlainToHtml.js"></script>
     <script src="./js/parser/Denden.js"></script>
     <script src="./js/parser/Narou.js"></script>
     <script src="./js/parser/Kakuyomu.js"></script>
@@ -23,17 +27,17 @@
 <body>
 <h1><a href="https://github.com/ytyaru/JS.Novel.Parser.20210117183645">小説の中間テキスト形式をHTMLに変換する。</a></h1>
 <select id="selector">
-    <!--
     <option value="Kakuyomu">カクヨム</option>
     <option value="Narou">小説家になろう</option>
     <option value="Denden">でんでんマークダウン</option>
-    <option value="Kakko">漢字(かんじ)</option>
-    <option value="KakkoAozora">漢字(かんじ)→｜漢字《かんじ》</option>
-    -->
+    <option value="PlainToHtml">漢字(かんじ)</option>
+    <option value="PlainToAozora">漢字(かんじ)→｜漢字《かんじ》</option>
+    <!--
     <option value="KakuyomuRubyRuleBuilder">カクヨム</option>
     <option value="NarouRubyRuleBuilder">小説家になろう</option>
     <option value="PlainToHtmlRubyRuleBuilder">漢字(かんじ)</option>
     <option value="PlainToAozoraRubyRuleBuilder">漢字(かんじ)→｜漢字《かんじ》</option>
+    -->
 </select>
 <div style="display:flex;">
     <textarea id="editor" cols="40" rows="20">あ｜漢字《かんじ》あ

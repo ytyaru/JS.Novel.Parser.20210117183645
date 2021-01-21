@@ -1,7 +1,7 @@
-class Narou {
+class PlainToAozora { // 漢字（かんじ）-> ｜漢字《かんじ》
     #rubyRuleBuilder;
     constructor() {
-        this.#rubyRuleBuilder = new NarouRubyRuleBuilder();
+        this.#rubyRuleBuilder = new PlainToAozoraRubyRuleBuilder();
     }
     parse(text) {
         text = this.#parseRuby(text);
