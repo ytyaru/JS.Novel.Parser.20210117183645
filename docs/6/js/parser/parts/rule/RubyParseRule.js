@@ -51,34 +51,4 @@ class RubyParseRule { // ｜ｅｔｃ《エトセトラ》　漢字《かんじ�
     convert(rb_txt, rt_txt) {
         return `<ruby>${rb_txt}<rt>${rt_txt}</rt></ruby>`;
     }
-    /*
-    parse(text) {
-        text = text.replace(Kakuyomu.#REGEX_RUBY, (match, p1, p2)=>{
-            return `<ruby>${p1}<rt>${p2}</rt></ruby>`;
-        });
-        text = text.replace(Kakuyomu.#REGEX_KANJI_RUBY, (match, p1, p2)=>{
-            return `<ruby>${p1}<rt>${p2}</rt></ruby>`;
-        });
-        // escape
-        text = text.replace('｜《', '《');
-        text = text.replace('|《', '《');
-        return text
-    }
-    */
-    // （） 括弧    Parentheses
-    // ｟ ｠    二重括弧
-    // 「」 鉤括弧	Angles
-    // 『』 二重鉤括弧
-    // ［ ］    角括弧  Brackets
-    // 〚 〛    二重角括弧
-    // ｛ ｝    波括弧  Braces
-    // 〔 〕    亀甲括弧
-    // 〘 〙    二重亀甲括弧
-    // 〈 〉    山括弧	Angle brackets
-    // 《 》    二重山括弧
-    // « »  ギュメ
-    // 【 】    隅付き括弧
-    // 〖 〗    隅付き括弧（白）
-    // ’’
-    // ””
 }

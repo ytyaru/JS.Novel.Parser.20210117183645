@@ -1,7 +1,6 @@
 class KakuyomuRubyRuleBuilder {
     #rules = [];
     constructor(isKakko=false) {
-        console.log('XXXXXXX');
         // 漢字（かんじ）,漢字(かんじ)を｜漢字《かんじ》に変換する
         if (isKakko) {
             this.#rules.concat(new PlainToAozoraRubyRuleBuilder().Rules);
@@ -14,7 +13,6 @@ class KakuyomuRubyRuleBuilder {
         normal.CanEscape = true;
         normal.CanOmitStartChar = true;
         this.#rules.push(normal);
-        console.log('XXXXXXX',this.#rules);
     }
     get Rules() { return this.#rules; }
 }
