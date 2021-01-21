@@ -13,7 +13,7 @@ class RubyParser { // 二重山括弧。
         console.log('this.#rule',this.#rule);
         this.#REGEX_RUBY = new RegExp(`[${this.#rule.StartChar}]([^\\n]{1,${this.#rule.RbLen}}?)[${this.#rule.EncloseStartChar}]([^\\n]{1,${this.#rule.RtLen}}?)[${this.#rule.EncloseEndChar}]`, 'g');
         this.#REGEX_KANJI_RUBY = new RegExp(`(${this.#REGEX_KANJI}{1,${this.#rule.RbLen}}?)[${this.#rule.EncloseStartChar}]([^\\n]{1,${this.#rule.RtLen}}?)[${this.#rule.EncloseEndChar}]`, 'g');
-        this.#REGEX_ESCAPE = new RegExp(`[${this.#rule.StartChar}][${this.#rule.EncloseStartChar}]`, 'g');
+        this.#REGEX_ESCAPE = new RegExp(`[${this.#rule.StartChar}]([${this.#rule.EncloseStartChar}])`, 'g');
     }
     parse(text) {
         const self = this;
@@ -27,19 +27,10 @@ class RubyParser { // 二重山括弧。
             });
         }
         if (self.#rule.CanEscape) {
-            text = text.replace(this.#REGEX_ESCAPE, this.#rule.EncloseStartChar[0]);
+            text = text.replace(this.#REGEX_ESCAPE, (match, p1)=>{
+                return p1;
+            });
         }
-        /*
-        text = text.replace(this.#REGEX_RUBY, (match, p1, p2)=>{
-            return `<ruby>${p1}<rt>${p2}</rt></ruby>`;
-        });
-        text = text.replace(this.#REGEX_KANJI_RUBY, (match, p1, p2)=>{
-            return `<ruby>${p1}<rt>${p2}</rt></ruby>`;
-        });
-        // escape
-        text = text.replace('｜《', '《');
-        text = text.replace('|《', '《');
-        */
         return text
     }
 }
