@@ -1,6 +1,6 @@
 class NarouRubyRuleBuilder {
     #rules = [];
-    constrractor() {
+    constructor() {
         // ｜漢字《かんじ》,漢字《かんじ》を<ruby>漢字<rt>かんじ</rt></ruby>に変換する
         const angle = new RubyParseRule();
         angle.setEncloseCharDoubleAngleBrackets();
@@ -13,7 +13,7 @@ class NarouRubyRuleBuilder {
 
         // 漢字（かんじ）,漢字(かんじ)を｜漢字《かんじ》に変換する
         const kakko = new RubyParseRule();
-        kakko.setEncloseCharDoubleAngleBrackets();
+        kakko.setEncloseCharParentheses();
         kakko.RbLen = 10;
         kakko.RtLen = 20;
         kakko.CanStartChar = false;
