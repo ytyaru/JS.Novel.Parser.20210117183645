@@ -1,8 +1,8 @@
 class PlainToAozoraRubyRuleBuilder {
     #rules = [];
-    constrractor(isKakko=false) {
+    constructor(isKakko=false) {
         // 漢字（かんじ）,漢字(かんじ)を｜漢字《かんじ》に変換する
-        aozora = new RubyParseRule();
+        const aozora = new RubyParseRule();
         aozora.setEncloseCharParentheses();
         aozora.RbLen = 50;
         aozora.RtLen = 20;
