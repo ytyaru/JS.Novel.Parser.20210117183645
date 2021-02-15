@@ -5,8 +5,8 @@ window.addEventListener('load', (event) => {
     document.querySelector('#editor').addEventListener('input', (event)=>{
         parse();
     });
-    function getParserType() { return eval(document.querySelector('#selector').value); }
-    function getRuleBuilderType(){return Function('return (' + document.querySelector('#selector').value + ')')();}
+//    function getParserType() { return eval(document.querySelector('#selector').value); }
+    function getParserType(){return Function(`return (${document.querySelector('#selector').value})`)();}
     function parse() {
         const editor = document.querySelector('#editor');
         const viewer = document.querySelector('#viewer');
